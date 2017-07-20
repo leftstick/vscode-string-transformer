@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-import { transform } from './command';
+import { transform6to5, transform5to6 } from './command';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -12,12 +12,14 @@ export function activate(context: vscode.ExtensionContext) {
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "es6 template literals transformer" is now active!');
 
+    const diagnosticCollection = vscode.languages.createDiagnosticCollection('string-transformer');
 
     vscode.workspace.onDidChangeConfiguration(() => {
         //
     }, this, context.subscriptions);
 
-    context.subscriptions.push(transform());
+    context.subscriptions.push(transform6to5(diagnosticCollection));
+    context.subscriptions.push(transform5to6(diagnosticCollection));
 
 }
 

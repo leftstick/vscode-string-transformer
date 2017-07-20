@@ -10,14 +10,14 @@ const vscodeLanguages = ['zh-cn', 'zh-tw']; // languages an extension has to be 
 const transifexApiHostname = 'www.transifex.com';
 const transifexApiName = 'api';
 const transifexApiToken = process.env.TOKEN; // token to talk to Transifex (to obtain it see https://docs.transifex.com/api/introduction#authentication)
-const transifexProjectName = 'vscode-es6-template-literals'; // your project name in Transifex
-const transifexExtensionName = 'labels'; // your resource name in Transifex
+const transifexProjectName = 'vscode-string-transformer'; // your project name in Transifex
+const transifexExtensionName = 'transformer'; // your resource name in Transifex
 
 
 const iso639_3_to_2 = {chs: 'zh-cn', cht: 'zh-tw'};
 
 gulp.task('clean', function(cb) {
-    return del(['i18n', 'labels-localization'], cb);;
+    return del(['i18n', 'transformer-localization'], cb);;
 });
 
 gulp.task('transifex-push', ['clean'], function() {

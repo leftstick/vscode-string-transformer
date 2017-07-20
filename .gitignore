@@ -1,6 +1,6 @@
 out
 node_modules
-favorites-localization
+transformer-localization
 i18n
 
 package.nls.*.json

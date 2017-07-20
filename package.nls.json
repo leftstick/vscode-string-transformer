@@ -1,3 +1,4 @@
 {
-	"command.es6literals.transform": "Convert to concatenated strings"
+	"command.stringtransformer.6to5": "Convert to concatenated strings",
+	"command.stringtransformer.5to6": "Convert to template literal"
 }

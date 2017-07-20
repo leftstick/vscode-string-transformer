@@ -1,5 +1,5 @@
 {
-  "name": "vscode-es6-template-literals",
+  "name": "vscode-string-transformer",
   "displayName": "ES6 template literals transformer",
   "description": "An extension helps developer converting ES6 template literals into concatenated strings",
   "version": "1.0.0",
@@ -18,13 +18,13 @@
   ],
   "icon": "images/convert.png",
   "bugs": {
-    "url": "https://github.com/leftstick/vscode-es6-template-literals/issues",
+    "url": "https://github.com/leftstick/vscode-string-transformer/issues",
     "email": "leftstick@qq.com"
   },
-  "homepage": "https://github.com/leftstick/vscode-es6-template-literals/blob/master/README.md",
+  "homepage": "https://github.com/leftstick/vscode-string-transformer/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leftstick/vscode-es6-template-literals.git"
+    "url": "https://github.com/leftstick/vscode-string-transformer.git"
   },
   "activationEvents": [
     "onLanguage:javascript",
@@ -39,7 +39,7 @@
       "type": "object",
       "title": "ES6 template literals transformer configuration",
       "properties": {
-        "es6literals.quotationStyle": {
+        "stringtransformer.quotationStyle": {
           "type": "string",
           "enum": [
             "SINGLE",
@@ -51,27 +51,40 @@
       }
     },
     "menus": {
-        "editor/context": [{
-            "command": "es6literals.transform",
-            "group": "formatter",
-            "when": "editorHasSelection"
-        }]
+      "editor/context": [
+        {
+          "command": "stringtransformer.transform6to5",
+          "group": "formatter",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "stringtransformer.transform5to6",
+          "group": "formatter",
+          "when": "editorHasSelection"
+        }
+      ]
     },
     "commands": [
       {
-        "command": "es6literals.transform",
-        "title": "%command.es6literals.transform%"
+        "command": "stringtransformer.transform6to5",
+        "title": "%command.stringtransformer.6to5%"
+      },
+      {
+        "command": "stringtransformer.transform5to6",
+        "title": "%command.stringtransformer.5to6%"
       }
     ]
   },
   "devDependencies": {
-    "@types/node": "^8.0.12",
+    "@types/node": "^8.0.14",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
-    "typescript": "^2.4.1",
+    "typescript": "^2.4.2",
     "vscode": "^1.1.4",
     "vscode-nls-dev": "^2.1.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "string-transformer": "^1.0.0"
+  }
 }
