@@ -5,6 +5,10 @@
 ![][rate-url]
 ![][license-url]
 
+
+> The implementation is unstable, do not use it until i find proper way to re-write this extension
+
+
 A vscode extension helps developer converting ES6 template literals into concatenated strings.
 
 ![](https://raw.githubusercontent.com/leftstick/vscode-es6-template-literals/master/images/preview.gif)
